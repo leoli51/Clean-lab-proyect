@@ -13,6 +13,9 @@ public class FishManager : MonoBehaviour
     public float environmental_impact = .3f;
     public int overpopulation_limit = 120;
     public int trash_per_round = 2;
+    
+    public Transform[] obstacles;
+    // add list of radius of obstacles
 
     int fishes_catched_current_round;
     int trash_catched_current_round;
