@@ -37,8 +37,8 @@ public class PowerUpManager : MonoBehaviour
     public void Clear()
     {
         // destroy children 
-        Destroy(power_up1_transform.GetChild(0));
-        Destroy(power_up2_transform.GetChild(0));
+        Destroy(power_up1_transform.GetChild(0).gameObject);
+        Destroy(power_up2_transform.GetChild(0).gameObject);
     }
 
 }

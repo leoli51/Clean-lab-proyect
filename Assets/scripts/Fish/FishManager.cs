@@ -36,16 +36,16 @@ public class FishManager : MonoBehaviour
 
     void populateSea(int fish_count, int trash_count)
     {
-        for (int i = 0; i < fish_count; i++)
-            spawnFish(Vector3.random);
-        for (int i = 0; i < trash_count; i++)
-            spawnTrash(Vector3.random);
+        for (int i = 0; i < fish_count; i++) ;
+        //spawnFish(Vector3.random);
+        for (int i = 0; i < trash_count; i++) ;
+           // spawnTrash(Vector3.random);
     }
 
     void spawnFish(Vector3 position)
     {
-        index = Random.Range(0, fishes_prefabs.Length);
-        Instantiate(fishes_prefabs[index], position, Quaternion.Identity);
+        //index = Random.Range(0, fishes_prefabs.Length);
+        //Instantiate(fishes_prefabs[index], position, Quaternion.Identity);
         // todo spawn fiahes in child of FishManager to control their behaviour better
     }
 
@@ -58,10 +58,11 @@ public class FishManager : MonoBehaviour
     {
         int remaining_fishes = 0; // retrieve fishes remaining
         int trash = 0; // retrieve trash that is remaining
-        int next_fishes = remaining_fishes * (reproduction_rate + 1); // reproduction of fishes
-        next_fishes -= (float)trash * environmental_impact; // environmental impact on fishes
-        next_fishes = Mathf.clamp(next_fishes, 0, overpopulation_limit); // limit fishes number due to overpopulation/ too much trash
-        return next_fishes;
+        //int next_fishes = remaining_fishes * (reproduction_rate + 1); // reproduction of fishes
+        //next_fishes -= (float)trash * environmental_impact; // environmental impact on fishes
+        //next_fishes = Mathf.clamp(next_fishes, 0, overpopulation_limit); // limit fishes number due to overpopulation/ too much trash
+        //return next_fishes;
+        return 0;
     }
 
     int computeTrashForNextRound()
