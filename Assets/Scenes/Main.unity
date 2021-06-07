@@ -274,7 +274,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 2.7e-44, z: 5.116e-42, w: 1.04e-43}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &170076735
@@ -347,7 +346,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -669,6 +667,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 632929298}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &751182971 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5188851365720421828, guid: cc6a53792ad417943bb4faf10df354db,
+    type: 3}
+  m_PrefabInstance: {fileID: 1824232545722429165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &764290085 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5628024503026007386, guid: ce1dfa2c293906d4fb7402b2e13b09a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4875382990045717428}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &989180238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6137497491829922048, guid: a2aaaa094093a294aade9f5a5ce62bbb,
@@ -979,7 +989,7 @@ LightingSettings:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
-  serializedVersion: 3
+  serializedVersion: 2
   m_GIWorkflowMode: 0
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 0
@@ -1018,7 +1028,7 @@ LightingSettings:
   m_PVREnvironmentReferencePointCount: 2048
   m_LightProbeSampleCountMultiplier: 4
   m_PVRBounces: 2
-  m_PVRMinBounces: 1
+  m_PVRRussianRouletteStartBounce: 2
   m_PVREnvironmentMIS: 0
   m_PVRFilteringMode: 2
   m_PVRDenoiserTypeDirect: 0
@@ -1886,19 +1896,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1386739916047859466, guid: 3dd964fb00858b140b8bc9cef9065336,
         type: 3}
-      propertyPath: GlobalSounds.Array.data[0].pitch
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: GlobalSounds.Array.data[6].source
+      value: 
+      objectReference: {fileID: 764290085}
     - target: {fileID: 1386739916047859466, guid: 3dd964fb00858b140b8bc9cef9065336,
         type: 3}
-      propertyPath: GlobalSounds.Array.data[1].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1633508785188944039, guid: 3dd964fb00858b140b8bc9cef9065336,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: GlobalSounds.Array.data[7].source
+      value: 
+      objectReference: {fileID: 751182971}
     - target: {fileID: 1633508785188944039, guid: 3dd964fb00858b140b8bc9cef9065336,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1916,11 +1921,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1633508785188944039, guid: 3dd964fb00858b140b8bc9cef9065336,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1633508785188944039, guid: 3dd964fb00858b140b8bc9cef9065336,
-        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1933,6 +1933,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633508785188944039, guid: 3dd964fb00858b140b8bc9cef9065336,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633508785188944039, guid: 3dd964fb00858b140b8bc9cef9065336,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1633508785188944039, guid: 3dd964fb00858b140b8bc9cef9065336,
         type: 3}

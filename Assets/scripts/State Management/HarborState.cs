@@ -20,8 +20,8 @@ public class HarborState : State
         // show "selling" of fish, counting of points
         // enable power up menu buttons
 
-        // AUDIO start harbor ambient sound
         audioManager.PlayOnce(AudioManager.SoundName.LoungeMusic);
+        audioManager.PlayOnce(AudioManager.SoundName.HarborAmbient);
     }
 
     public override void BeforeDeactivate()
@@ -30,7 +30,7 @@ public class HarborState : State
         // hide/disable canvas
 
         audioManager.Stop(AudioManager.SoundName.LoungeMusic);
-        // AUDIO stop harbor ambient sound
+        audioManager.Stop(AudioManager.SoundName.HarborAmbient);
     }
 
     public void StartNextLevel()

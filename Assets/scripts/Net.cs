@@ -32,6 +32,7 @@ public class Net : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         lineRenderer = GetComponent<LineRenderer>();
         meshCollider = GetComponent<MeshCollider>();
         mesh = new Mesh();
@@ -124,7 +125,8 @@ public class Net : MonoBehaviour
         fish.SetActive(false);
         Destroy(fish);
         fishCount++;
-        // TODO play sound effect, remove collected gameobject from scene
+        audioManager.Play(AudioManager.SoundName.CollectFish);
+        // TODO remove collected gameobject from scene
         // NTH increase "weight" of the net (by making the line thicker in the middle and speed slower
     }
 
@@ -134,7 +136,9 @@ public class Net : MonoBehaviour
         Destroy(trash);
         trashCount++;
         damage++;
-        // TODO play sound effect, remove collected gameobject from scene
+        audioManager.Play(AudioManager.SoundName.CollectTrash);
+
+        // TODO remove collected gameobject from scene
         // NTH increase "weight" of the net (by making the line thicker in the middle and speed slower
     }
 
@@ -145,7 +149,8 @@ public class Net : MonoBehaviour
         meshCollider.sharedMesh = null;
         meshCollider.enabled = false;
         lineRenderer.enabled = false;
-        // TODO add sound effect
+        audioManager.Play(AudioManager.SoundName.NetRip);
+
     }
 
     public void Restore()

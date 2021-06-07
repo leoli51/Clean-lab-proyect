@@ -31,9 +31,11 @@ public class FishingState : State
         // update fish/trash population variables ?
         // spawn fishes ?
 
-        // AUDIO start game ambient sound
-        // AUDIO enable boat movement sound
+        audioManager.PlayOnce(AudioManager.SoundName.StartLevel);
+        audioManager.PlayOnce(AudioManager.SoundName.BlueBoatNoise);
+        audioManager.PlayOnce(AudioManager.SoundName.RedBoatNoise);
         audioManager.PlayOnce(AudioManager.SoundName.MainMusic);
+        audioManager.PlayOnce(AudioManager.SoundName.FishingAmbient);
 
     }
 
@@ -48,14 +50,16 @@ public class FishingState : State
         blueBoat.GetComponent<Rigidbody>().isKinematic = true;
 
 
-        // AUDIO stop boat sounds
-        // AUDIO stop game ambient sounds
+        audioManager.Stop(AudioManager.SoundName.BlueBoatNoise);
+        audioManager.Stop(AudioManager.SoundName.RedBoatNoise);
         audioManager.Stop(AudioManager.SoundName.MainMusic);
+        audioManager.Stop(AudioManager.SoundName.FishingAmbient);
 
     }
 
     public void EndLevel()
     {
+        audioManager.Play(AudioManager.SoundName.EnterHarbor);
         stateMachine.GoTo<HarborState>();
     }
 }
