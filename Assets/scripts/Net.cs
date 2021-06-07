@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Net : MonoBehaviour
@@ -21,6 +22,8 @@ public class Net : MonoBehaviour
 
     public int fishCount;
     public int trashCount;
+
+    public AudioManager audioManager;
 
     LineRenderer lineRenderer;
     MeshCollider meshCollider;
@@ -97,21 +100,21 @@ public class Net : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision with " + collision.gameObject.name);
+        Debug.Log("[ NET ] Collision with " + collision.gameObject.name);
 
         if (collision.gameObject.tag == "Island")
         { 
-            Debug.Log("Crashed into Island");
+            Debug.Log("[ NET ] Crashed into Island");
             Rip();
         }
         else if (collision.gameObject.tag == "Fish")
         {
-            Debug.Log("Collected Fish");
+            Debug.Log("[ NET ] Collected Fish");
             CollectFish(collision.gameObject);
         }
         else if (collision.gameObject.tag == "Trash")
         {
-            Debug.Log("Collected Trash");
+            Debug.Log("[ NET ] Collected Trash");
             CollectTrash(collision.gameObject);
         }
     }
@@ -119,6 +122,7 @@ public class Net : MonoBehaviour
     void CollectFish(GameObject fish)
     {
         fish.SetActive(false);
+        Destroy(fish);
         fishCount++;
         // TODO play sound effect, remove collected gameobject from scene
         // NTH increase "weight" of the net (by making the line thicker in the middle and speed slower
@@ -127,6 +131,7 @@ public class Net : MonoBehaviour
     void CollectTrash(GameObject trash)
     {
         trash.SetActive(false);
+        Destroy(trash);
         trashCount++;
         damage++;
         // TODO play sound effect, remove collected gameobject from scene
