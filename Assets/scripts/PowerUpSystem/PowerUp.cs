@@ -7,10 +7,18 @@ using UnityEngine.UI;
 public class PowerUp : MonoBehaviour
 {
 
-    public string gameobject_name;
-    public string component_name;
-    public string property_name;
-    public float increase_amount;
+    [Serializable]
+    public class PowerUpReflectionAccessor
+    {
+        public string gameobject_name;
+        public string component_name;
+        public string property_name;
+        public float increase_amount;
+    }
+
+    public List<PowerUpReflectionAccessor> power_up_effects;
+
+    public bool do_nothing = true;
 
     public float decision_time;
     float elapsed_decision_time;
@@ -84,10 +92,13 @@ public class PowerUp : MonoBehaviour
             player_2_in = false;
     }
 
-    void Consume() 
+    void Consume()
     {
-        GameObject gameobject = GameObject.Find(gameobject_name);
-        Component component = gameobject.GetComponent(component_name);
-        component.GetType().GetField(property_name).SetValue(component, ((float)component.GetType().GetField(property_name).GetValue(component)) + increase_amount);
+        if (do_nothing) return;
+        foreach (PowerUpReflectionAccessor accessor in power_up_effects) {
+            GameObject gameobject = GameObject.Find(accessor.gameobject_name);
+            Component component = gameobject.GetComponent(accessor.component_name);
+            component.GetType().GetField(accessor.property_name).SetValue(component, ((float)component.GetType().GetField(accessor.property_name).GetValue(component)) + accessor.increase_amount);
+        }
     }
 }

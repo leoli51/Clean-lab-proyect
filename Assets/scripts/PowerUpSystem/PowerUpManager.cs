@@ -15,6 +15,9 @@ public class PowerUpManager : MonoBehaviour
     {
         power_up1_transform = transform.GetChild(0);
         power_up2_transform = transform.GetChild(1);
+
+        // test 
+        Show();
     }
 
     // Update is called once per frame
@@ -32,6 +35,11 @@ public class PowerUpManager : MonoBehaviour
 
         p1.transform.parent = power_up1_transform;
         p2.transform.parent = power_up2_transform;
+
+        p1.transform.localPosition *= 0;
+        p2.transform.localPosition *= 0;
+
+        this.gameObject.active = true;
     }
 
     public void Clear()
@@ -39,6 +47,8 @@ public class PowerUpManager : MonoBehaviour
         // destroy children 
         Destroy(power_up1_transform.GetChild(0).gameObject);
         Destroy(power_up2_transform.GetChild(0).gameObject);
+
+        this.gameObject.active = false;
     }
 
 }
