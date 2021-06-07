@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class PowerUp : MonoBehaviour
 {
+
+    public string gameobject_name;
+    public string component_name;
+    public string property_name;
+    public float increase_amount;
+
     public float decision_time;
     float elapsed_decision_time;
 
@@ -80,6 +86,8 @@ public class PowerUp : MonoBehaviour
 
     void Consume() 
     {
-        Debug.Log("Consumed power up");
+        GameObject gameobject = GameObject.Find(gameobject_name);
+        Component component = gameobject.GetComponent(component_name);
+        component.GetType().GetField(property_name).SetValue(component, ((float)component.GetType().GetField(property_name).GetValue(component)) + increase_amount);
     }
 }
