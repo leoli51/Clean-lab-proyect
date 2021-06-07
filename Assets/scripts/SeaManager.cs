@@ -6,7 +6,7 @@ public class SeaManager : MonoBehaviour
 {
 
     public GameObject[] fishes_prefabs;
-    public GameObject trash;
+    public GameObject[] trash_prefabs;
 
     public int overpopulation_limit = 50;
     public float reproduction_rate = .75f;
@@ -25,7 +25,7 @@ public class SeaManager : MonoBehaviour
         populateSea(start_fishes, start_trash);
 
         //next rounds, for testing purposes
-        InvokeRepeating("nextRound", 10f, 10f);
+        InvokeRepeating("nextRound", 30f, 30f);
     }
 
     // Update is called once per frame
@@ -40,6 +40,7 @@ public class SeaManager : MonoBehaviour
         int addFishes = computeFishesForNextRound();
         int addTrash = computeTrashForNextRound();
 
+        wipeSea(); //deletes previous round fishes, because in the populateSea the remaining are already added
         populateSea(addFishes, addTrash);
 
     }
@@ -66,9 +67,11 @@ public class SeaManager : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            GameObject new_trash = Instantiate(trash);
+            int index = Random.Range(0, trash_prefabs.Length);
+            GameObject new_trash = Instantiate(trash_prefabs[index]);
             new_trash.gameObject.transform.position = new Vector3(Random.Range(0, 100), -1, Random.Range(0, 100));
             new_trash.transform.parent = transform;
+            new_trash.transform.rotation = Random.rotation;
         }
     }
 
@@ -118,7 +121,11 @@ public class SeaManager : MonoBehaviour
         Debug.Log("remaining fish = " + fishPopulation + " | remaining trash = " + trashPopulation);
     }
 
-
+    void wipeSea() {
+        var children = new List<GameObject>();
+        foreach (Transform child in transform) children.Add(child.gameObject);
+        children.ForEach(child => Destroy(child));
+    }
 
 
 }
