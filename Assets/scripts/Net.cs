@@ -151,6 +151,8 @@ public class Net : MonoBehaviour
     {
         ripped = true;
         mesh.Clear();
+        fishCount = 0;
+        trashCount = 0;
         meshCollider.sharedMesh = null;
         meshCollider.enabled = false;
         lineRenderer.enabled = false;
@@ -162,6 +164,8 @@ public class Net : MonoBehaviour
     {
         damage = 0;
         ripped = false;
+        fishCount = 0;
+        trashCount = 0;
         meshCollider.enabled = true;
         lineRenderer.enabled = true;
         repairText.SetActive(false);
