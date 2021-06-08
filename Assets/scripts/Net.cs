@@ -23,19 +23,25 @@ public class Net : MonoBehaviour
     public int fishCount;
     public int trashCount;
 
-    public AudioManager audioManager;
+    AudioManager audioManager;
+    public GameObject repairText;
 
     LineRenderer lineRenderer;
     MeshCollider meshCollider;
     Mesh mesh;
 
+    float initialWidthFactor;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         lineRenderer = GetComponent<LineRenderer>();
         meshCollider = GetComponent<MeshCollider>();
         mesh = new Mesh();
         vertexPosition = red_boat.position + ((blue_boat.position - red_boat.position) / 2);
+
+        initialWidthFactor = lineRenderer.widthMultiplier;
     }
 
     // Update is called once per frame
@@ -124,7 +130,8 @@ public class Net : MonoBehaviour
         fish.SetActive(false);
         Destroy(fish);
         fishCount++;
-        // TODO play sound effect, remove collected gameobject from scene
+        audioManager.Play(AudioManager.SoundName.CollectFish);
+        // TODO remove collected gameobject from scene
         // NTH increase "weight" of the net (by making the line thicker in the middle and speed slower
     }
 
@@ -134,7 +141,9 @@ public class Net : MonoBehaviour
         Destroy(trash);
         trashCount++;
         damage++;
-        // TODO play sound effect, remove collected gameobject from scene
+        audioManager.Play(AudioManager.SoundName.CollectTrash);
+
+        // TODO remove collected gameobject from scene
         // NTH increase "weight" of the net (by making the line thicker in the middle and speed slower
     }
 
@@ -145,7 +154,8 @@ public class Net : MonoBehaviour
         meshCollider.sharedMesh = null;
         meshCollider.enabled = false;
         lineRenderer.enabled = false;
-        // TODO add sound effect
+        audioManager.Play(AudioManager.SoundName.NetRip);
+        repairText.SetActive(true);
     }
 
     public void Restore()
@@ -154,6 +164,8 @@ public class Net : MonoBehaviour
         ripped = false;
         meshCollider.enabled = true;
         lineRenderer.enabled = true;
+        repairText.SetActive(false);
+        lineRenderer.widthMultiplier = initialWidthFactor;
     }
 
 }

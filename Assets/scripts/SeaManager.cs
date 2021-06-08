@@ -22,10 +22,7 @@ public class SeaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        populateSea(start_fishes, start_trash);
-
-        //next rounds, for testing purposes
-        InvokeRepeating("nextRound", 30f, 30f);
+        //populateSea(start_fishes, start_trash);
     }
 
     // Update is called once per frame
@@ -35,7 +32,7 @@ public class SeaManager : MonoBehaviour
     }
 
 
-    void nextRound() {
+    public void nextRound() {
 
         int addFishes = computeFishesForNextRound();
         int addTrash = computeTrashForNextRound();
@@ -45,14 +42,14 @@ public class SeaManager : MonoBehaviour
 
     }
 
-    void populateSea(int fish_count, int trash_count)
+    public void populateSea(int fish_count, int trash_count)
     {
         SpawnFish(fish_count);
         SpawnTrash(trash_count);
     }
 
 
-    void SpawnFish(int amount)
+    public void SpawnFish(int amount)
     {
         for (int i = 0; i < amount; i++)
         {

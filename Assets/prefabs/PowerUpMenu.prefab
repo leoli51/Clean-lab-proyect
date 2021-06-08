@@ -107,7 +107,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power_ups:
-  - {fileID: 5759900807799984456, guid: afa56db84e36b2a4582a3d6926c35cb1, type: 3}
+  - {fileID: 6457621725555947998, guid: af4382247daf3414090fcc093eca9cf5, type: 3}
+  - {fileID: 3714843471613692477, guid: 3c87a1add54241d428c7939a6ca0ef9d, type: 3}
+  - {fileID: 4339503321863487765, guid: 09e0f67f42f07dd4395fd26fea4ceb03, type: 3}
+  - {fileID: 8235863178708137439, guid: 9ea11ebc1e9a8fd4cbdf38ab5ed10c6e, type: 3}
+  - {fileID: 8942395269748132635, guid: 0b54936d140cbe04e8394045fce500ea, type: 3}
 --- !u!1 &9163202707991739957
 GameObject:
   m_ObjectHideFlags: 0

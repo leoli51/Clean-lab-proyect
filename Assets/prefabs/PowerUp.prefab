@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1288410247268530436}
   - component: {fileID: 6170341219522566494}
   - component: {fileID: 3404719691740513215}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 7867480404865085189}
   - component: {fileID: 5210892911090408317}
   - component: {fileID: 1885899732677195735}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 7239680575811566130}
   - component: {fileID: 7239680575811566131}
   - component: {fileID: 3862794355670260719}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,10 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1f9bbd608edc544952622d9d568414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameobject_name: 
-  component_name: 
-  property_name: 
-  increase_amount: 0
+  power_up_effects: []
   do_nothing: 1
   decision_time: 1
   default_color: {r: 0.23113209, g: 1, b: 0.5512824, a: 0}
@@ -363,7 +360,7 @@ GameObject:
   - component: {fileID: 4332940348743941846}
   - component: {fileID: 6494308595349983381}
   - component: {fileID: 7356713342108445077}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

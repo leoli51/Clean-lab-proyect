@@ -87,6 +87,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   harbor: {fileID: 0}
+  redBoat: {fileID: 0}
+  blueBoat: {fileID: 0}
 --- !u!1 &6099313011694526293
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc517aca452d5a4aad61e06d92c9906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initalState: {fileID: 6099313010899058385}
+  initalState: {fileID: 6099313011987363369}
   currentState: {fileID: 0}
 --- !u!1 &6099313011987363367
 GameObject:
@@ -178,3 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22e287186d74c9428e5e1fc492c0c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStartManager: {fileID: 0}
+  redBoat: {fileID: 0}
+  blueBoat: {fileID: 0}

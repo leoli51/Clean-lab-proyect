@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameStartManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameStartManager : MonoBehaviour
 
     PlayerStartPosition p1, p2;
     bool game_started = false;
+
+    public UnityEvent OnSelect;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +29,7 @@ public class GameStartManager : MonoBehaviour
             p1.disappear(time_to_disappear);
             p2.disappear(time_to_disappear);
 
-            StartGame();
+            OnSelect.Invoke();
         }
         if (game_started)
         {
@@ -34,10 +37,5 @@ public class GameStartManager : MonoBehaviour
             if (time_to_disappear <= 0)
                 Destroy(this.gameObject);
         }
-    }
-
-    void StartGame()
-    {
-        Debug.Log("Game is starting what should we do?");
     }
 }
