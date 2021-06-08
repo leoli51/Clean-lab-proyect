@@ -23,7 +23,8 @@ public class Net : MonoBehaviour
     public int fishCount;
     public int trashCount;
 
-    public AudioManager audioManager;
+    AudioManager audioManager;
+    public GameObject repairText;
 
     LineRenderer lineRenderer;
     MeshCollider meshCollider;
@@ -150,7 +151,7 @@ public class Net : MonoBehaviour
         meshCollider.enabled = false;
         lineRenderer.enabled = false;
         audioManager.Play(AudioManager.SoundName.NetRip);
-
+        repairText.SetActive(true);
     }
 
     public void Restore()
@@ -159,6 +160,7 @@ public class Net : MonoBehaviour
         ripped = false;
         meshCollider.enabled = true;
         lineRenderer.enabled = true;
+        repairText.SetActive(false);
     }
 
 }

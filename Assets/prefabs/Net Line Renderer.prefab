@@ -168,7 +168,7 @@ MonoBehaviour:
   max_speed: 8
   max_stretch: 50
   changeLineWidthFrom: 0.8
-  strength: 5
+  strength: 4
   damage: 0
   fishCount: 0
   trashCount: 0
