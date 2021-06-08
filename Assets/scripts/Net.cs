@@ -30,6 +30,8 @@ public class Net : MonoBehaviour
     MeshCollider meshCollider;
     Mesh mesh;
 
+    float initialWidthFactor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,8 @@ public class Net : MonoBehaviour
         meshCollider = GetComponent<MeshCollider>();
         mesh = new Mesh();
         vertexPosition = red_boat.position + ((blue_boat.position - red_boat.position) / 2);
+
+        initialWidthFactor = lineRenderer.widthMultiplier;
     }
 
     // Update is called once per frame
@@ -161,6 +165,7 @@ public class Net : MonoBehaviour
         meshCollider.enabled = true;
         lineRenderer.enabled = true;
         repairText.SetActive(false);
+        lineRenderer.widthMultiplier = initialWidthFactor;
     }
 
 }
