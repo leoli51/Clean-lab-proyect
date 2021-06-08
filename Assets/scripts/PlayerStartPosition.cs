@@ -54,9 +54,13 @@ public class PlayerStartPosition : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
+    {      
         if (other.tag == player_tag)
+        {
+            Debug.Log("Player Entered");
             player_ready = true;
+        }
+            
     }
 
     private void OnTriggerExit(Collider other)

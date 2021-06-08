@@ -4,21 +4,21 @@ using UnityEngine;
 public class HarborState : State
 {
     // Canvas to show the points
-    // PowerUpMenu powerUpMenu;
+    public PowerUpManager powerUpManager;
     AudioManager audioManager;
 
     protected override void Awake()
     {
         base.Awake();
         audioManager = FindObjectOfType<AudioManager>();
-        // powerUpMenu.OnSelect.AddListener(StartNextLevel);
+        powerUpManager.OnSelect.AddListener(StartNextLevel);
     }
 
     public override void AfterActivate()
     {
         // enable canvas
         // show "selling" of fish, counting of points
-        // enable power up menu buttons
+        powerUpManager.Show();
 
         audioManager.PlayOnce(AudioManager.SoundName.LoungeMusic);
         audioManager.PlayOnce(AudioManager.SoundName.HarborAmbient);
@@ -26,7 +26,6 @@ public class HarborState : State
 
     public override void BeforeDeactivate()
     {
-        // hide/disable power up buttons
         // hide/disable canvas
 
         audioManager.Stop(AudioManager.SoundName.LoungeMusic);

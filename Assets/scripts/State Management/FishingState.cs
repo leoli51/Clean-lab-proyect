@@ -4,7 +4,7 @@ using UnityEngine;
 public class FishingState : State
 {
     AudioManager audioManager;
-    // FishManager fishManager;
+    public SeaManager seaManager;
     public Harbor harbor;
     public FollowPointer redBoat;
     public FollowPointer blueBoat;
@@ -28,8 +28,7 @@ public class FishingState : State
         blueBoat.GetComponent<FollowPointer>().enabled = true;
         blueBoat.GetComponent<Rigidbody>().isKinematic = false;
 
-        // update fish/trash population variables ?
-        // spawn fishes ?
+        seaManager.nextRound();
 
         audioManager.PlayOnce(AudioManager.SoundName.StartLevel);
         audioManager.PlayOnce(AudioManager.SoundName.BlueBoatNoise);

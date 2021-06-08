@@ -4,10 +4,11 @@ using UnityEngine;
 public class StartmenuState : State
 {
     // public Canvas startMenuCanvas
-    GameStartManager gameStartManager;
+    public GameStartManager gameStartManager;
     AudioManager audioManager;
     public FollowPointer redBoat;
     public FollowPointer blueBoat;
+    public SeaManager seaManager;
 
     protected override void Awake()
     {
@@ -41,6 +42,7 @@ public class StartmenuState : State
     public void StartGame()
     {
         audioManager.Play(AudioManager.SoundName.Select);
+        seaManager.populateSea(seaManager.start_fishes, seaManager.start_trash);
         stateMachine.GoTo<FishingState>();
     }
 }
