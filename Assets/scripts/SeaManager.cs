@@ -15,6 +15,10 @@ public class SeaManager : MonoBehaviour
     public int start_fishes = 12;
     public int start_trash = 2;
 
+    public MeshRenderer water_plane;
+    public Color polluted_water;
+    Color clean_water;
+
     //private List<GameObject> createdObjects = new List<GameObject>();
     private int fishPopulation = 0;
     private int trashPopulation = 0;
@@ -23,6 +27,7 @@ public class SeaManager : MonoBehaviour
     void Start()
     {
         //populateSea(start_fishes, start_trash);
+        clean_water = water_plane.material.color;
     }
 
     // Update is called once per frame
@@ -39,6 +44,10 @@ public class SeaManager : MonoBehaviour
 
         wipeSea(); //deletes previous round fishes, because in the populateSea the remaining are already added
         populateSea(addFishes, addTrash);
+
+        // set water color
+        // color based on percentage of trash in the sea
+        water_plane.material.color = Color.Lerp(clean_water, polluted_water, ((float)addTrash) / (addFishes + addTrash));
 
     }
 
