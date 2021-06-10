@@ -124,5 +124,15 @@ public class SeaManager : MonoBehaviour
         children.ForEach(child => Destroy(child));
     }
 
+    public int GetTrashPopulation()
+    {
+        return trashPopulation;
+    }
+
+    public int GetFishPopulation()
+    {
+        return fishPopulation;
+    }
+
 
 }

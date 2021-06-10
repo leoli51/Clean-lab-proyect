@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class StartmenuState : State
@@ -9,6 +10,8 @@ public class StartmenuState : State
     public FollowPointer redBoat;
     public FollowPointer blueBoat;
     public SeaManager seaManager;
+    public TextMeshPro captainText;
+    public GameObject captain;
 
     protected override void Awake()
     {
@@ -24,19 +27,18 @@ public class StartmenuState : State
         redBoat.GetComponent<Rigidbody>().isKinematic = true;
         blueBoat.GetComponent<FollowPointer>().enabled = false;
         blueBoat.GetComponent<Rigidbody>().isKinematic = true;
-        
 
-
-        // show start text canvas (credits, explanation)
-        // show start button element
+        // show start text
+        captain.SetActive(true);
+        captainText.text = "Ahoy sailors! Let's set out to catch some fish.";
 
         audioManager.Play(AudioManager.SoundName.MainMusic);
     }
 
     public override void BeforeDeactivate()
     {
-        // hide/disable start menu canvas
-        // hide/disable start menu buttons
+        // hide start text
+        captain.SetActive(false);
     }
 
     public void StartGame()

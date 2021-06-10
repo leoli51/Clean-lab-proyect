@@ -4,7 +4,7 @@ using UnityEngine;
 public class FishingState : State
 {
     AudioManager audioManager;
-    public SeaManager seaManager;
+    SeaManager seaManager;
     public Harbor harbor;
     public FollowPointer redBoat;
     public FollowPointer blueBoat;
@@ -14,9 +14,7 @@ public class FishingState : State
     {
         base.Awake();
         audioManager = FindObjectOfType<AudioManager>();
-        // TODO ideally count points/fish/trash here 
-        // -> the Net can tell FishingState to count, FishManager can get information from State
-        // -> or better to have a point counting script (score) and connect that with the net?
+        seaManager = FindObjectOfType<SeaManager>();
     }
 
     public override void AfterActivate()

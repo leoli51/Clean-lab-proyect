@@ -15,7 +15,7 @@ public class Net : MonoBehaviour
     public float changeLineWidthFrom = 0.8f;
 
     private Vector3 vertexPosition;
-    private bool ripped = false;
+    public bool ripped = false;
 
     public int strength = 10;
     public int damage = 0;
