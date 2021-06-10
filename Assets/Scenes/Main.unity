@@ -598,7 +598,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9339623, g: 0.93282944, b: 0.8758099, a: 1}
+  m_Color: {r: 0.94509804, g: 0.9443655, b: 0.89411765, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -644,7 +644,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.5257e-41, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 4.1876e-41, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -662,6 +662,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 48.176, y: -28.814, z: 1.57}
+--- !u!23 &170506691 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2363734, guid: d1f03074e612bbd4b84736d2d7aee882,
+    type: 3}
+  m_PrefabInstance: {fileID: 1156730682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &173991395 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 358267633425073814, guid: aa4500872cbd41141b1ffb514e823c69,
@@ -2405,6 +2411,8 @@ MonoBehaviour:
   trash_per_round: 2
   start_fishes: 12
   start_trash: 5
+  water_plane: {fileID: 170506691}
+  polluted_water: {r: 0.2856065, g: 0.3018868, b: 0.08373086, a: 1}
 --- !u!114 &1294626435 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4875382989594252658, guid: ce1dfa2c293906d4fb7402b2e13b09a3,
