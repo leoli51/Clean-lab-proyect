@@ -18,7 +18,6 @@ public class HarborState : State
 
     public override void AfterActivate()
     {
-        net.Restore();
         // enable canvas
         // show "selling" of fish, counting of points
         if (net.fishCount >= neededFishCount)
@@ -45,7 +44,6 @@ public class HarborState : State
 
     public void StartNextLevel()
     {
-        // TODO call when powerup was selected
         stateMachine.GoTo<FishingState>();
     }
 }

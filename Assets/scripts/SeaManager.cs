@@ -37,7 +37,7 @@ public class SeaManager : MonoBehaviour
         int addFishes = computeFishesForNextRound();
         int addTrash = computeTrashForNextRound();
 
-        wipeSea(); //deletes previous round fishes, because in the populateSea the remaining are already added
+        wipeSea(); // deletes previous round fishes, because in the populateSea the remaining are already added
         populateSea(addFishes, addTrash);
 
     }

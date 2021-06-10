@@ -8,6 +8,7 @@ public class FishingState : State
     public Harbor harbor;
     public FollowPointer redBoat;
     public FollowPointer blueBoat;
+    public Net net;
 
     protected override void Awake()
     {
@@ -20,6 +21,7 @@ public class FishingState : State
 
     public override void AfterActivate()
     {
+        net.Restore();
         harbor.OnBoatsInHarbor.AddListener(EndLevel);
 
         // activate boat movement
