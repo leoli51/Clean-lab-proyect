@@ -15,7 +15,7 @@ public class Net : MonoBehaviour
     public float changeLineWidthFrom = 0.8f;
 
     private Vector3 vertexPosition;
-    private bool ripped = false;
+    public bool ripped = false;
 
     public int strength = 10;
     public int damage = 0;
@@ -32,25 +32,25 @@ public class Net : MonoBehaviour
 
     float initialWidthFactor;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
         lineRenderer = GetComponent<LineRenderer>();
         meshCollider = GetComponent<MeshCollider>();
         mesh = new Mesh();
-        vertexPosition = red_boat.position + ((blue_boat.position - red_boat.position) / 2);
 
+        vertexPosition = red_boat.position + ((blue_boat.position - red_boat.position) / 2);
         initialWidthFactor = lineRenderer.widthMultiplier;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (damage >= strength) Rip();
-        
         if (!ripped)
         {
+            if (damage >= strength) Rip();
+
             float boat_distance = Vector3.Distance(blue_boat.position, red_boat.position);
             if (boat_distance > max_stretch) Rip();
 
@@ -131,7 +131,6 @@ public class Net : MonoBehaviour
         Destroy(fish);
         fishCount++;
         audioManager.Play(AudioManager.SoundName.CollectFish);
-        // TODO remove collected gameobject from scene
         // NTH increase "weight" of the net (by making the line thicker in the middle and speed slower
     }
 
@@ -142,8 +141,6 @@ public class Net : MonoBehaviour
         trashCount++;
         damage++;
         audioManager.Play(AudioManager.SoundName.CollectTrash);
-
-        // TODO remove collected gameobject from scene
         // NTH increase "weight" of the net (by making the line thicker in the middle and speed slower
     }
 
@@ -151,6 +148,8 @@ public class Net : MonoBehaviour
     {
         ripped = true;
         mesh.Clear();
+        fishCount = 0;
+        trashCount = 0;
         meshCollider.sharedMesh = null;
         meshCollider.enabled = false;
         lineRenderer.enabled = false;
@@ -162,6 +161,8 @@ public class Net : MonoBehaviour
     {
         damage = 0;
         ripped = false;
+        fishCount = 0;
+        trashCount = 0;
         meshCollider.enabled = true;
         lineRenderer.enabled = true;
         repairText.SetActive(false);

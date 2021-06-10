@@ -42,7 +42,7 @@ public class SeaManager : MonoBehaviour
         int addFishes = computeFishesForNextRound();
         int addTrash = computeTrashForNextRound();
 
-        wipeSea(); //deletes previous round fishes, because in the populateSea the remaining are already added
+        wipeSea(); // deletes previous round fishes, because in the populateSea the remaining are already added
         populateSea(addFishes, addTrash);
 
         // set water color
@@ -131,6 +131,16 @@ public class SeaManager : MonoBehaviour
         var children = new List<GameObject>();
         foreach (Transform child in transform) children.Add(child.gameObject);
         children.ForEach(child => Destroy(child));
+    }
+
+    public int GetTrashPopulation()
+    {
+        return trashPopulation;
+    }
+
+    public int GetFishPopulation()
+    {
+        return fishPopulation;
     }
 
 

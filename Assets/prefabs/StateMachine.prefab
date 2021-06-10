@@ -43,6 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9296fd85d949e7244ba40fc4d9900211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  neededFishCount: 10
+  powerUpManager: {fileID: 0}
+  net: {fileID: 0}
+  captainText: {fileID: 0}
+  captain: {fileID: 0}
+  timerText: {fileID: 0}
+  timer: {fileID: 0}
+  fishCountText: {fileID: 0}
+  trashCountText: {fileID: 0}
 --- !u!1 &6099313010899058383
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +98,7 @@ MonoBehaviour:
   harbor: {fileID: 0}
   redBoat: {fileID: 0}
   blueBoat: {fileID: 0}
+  net: {fileID: 0}
 --- !u!1 &6099313011694526293
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,3 +193,6 @@ MonoBehaviour:
   gameStartManager: {fileID: 0}
   redBoat: {fileID: 0}
   blueBoat: {fileID: 0}
+  seaManager: {fileID: 0}
+  captainText: {fileID: 0}
+  captain: {fileID: 0}
