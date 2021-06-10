@@ -10,9 +10,11 @@ public class FollowPointer : MonoBehaviour
     public float max_speed;
     public float rotationSpeed;
 
+    Rigidbody body;
+
     void Start()
     {
-        
+        body = GetComponent<Rigidbody>();   
     }
 
     void Update()
@@ -22,5 +24,8 @@ public class FollowPointer : MonoBehaviour
 
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(pointer.position-transform.position)
             ,Time.deltaTime * rotationSpeed);
+
+        body.velocity = Vector3.zero;
+        body.angularVelocity = Vector3.zero;
     }
 }
