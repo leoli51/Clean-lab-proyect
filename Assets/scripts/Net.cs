@@ -16,8 +16,9 @@ public class Net : MonoBehaviour
 
     private Vector3 vertexPosition;
     public bool ripped = false;
-
-    public int strength = 10;
+    
+    // changed to float to work with power up script ... hope there is not something like strength == 0 in the code....
+    public float strength = 10;
     public int damage = 0;
 
     public int fishCount;

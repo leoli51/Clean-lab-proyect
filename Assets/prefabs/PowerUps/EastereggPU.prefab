@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1134698817443763240, guid: 8ed8f2d5e311d6c4a9e8c210cf16fdc1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c373126678c3554e8b4b19942900a98,
+        type: 3}
     - target: {fileID: 3404719691740513215, guid: 8ed8f2d5e311d6c4a9e8c210cf16fdc1,
         type: 3}
       propertyPath: m_text
@@ -16,6 +22,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232669561102882754, guid: 8ed8f2d5e311d6c4a9e8c210cf16fdc1,
+        type: 3}
+      propertyPath: m_text
+      value: Easteregg
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232669561102882754, guid: 8ed8f2d5e311d6c4a9e8c210cf16fdc1,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232669561102882754, guid: 8ed8f2d5e311d6c4a9e8c210cf16fdc1,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.5283019
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232669561102882754, guid: 8ed8f2d5e311d6c4a9e8c210cf16fdc1,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.002491996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232669561102882754, guid: 8ed8f2d5e311d6c4a9e8c210cf16fdc1,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.37813526
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232669561102882754, guid: 8ed8f2d5e311d6c4a9e8c210cf16fdc1,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284481927
       objectReference: {fileID: 0}
     - target: {fileID: 7239680575811566132, guid: 8ed8f2d5e311d6c4a9e8c210cf16fdc1,
         type: 3}
