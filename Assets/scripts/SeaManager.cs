@@ -77,7 +77,7 @@ public class SeaManager : MonoBehaviour
             GameObject new_trash = Instantiate(trash_prefabs[index]);
             new_trash.gameObject.transform.position = new Vector3(Random.Range(0, 100), -1, Random.Range(0, 100));
             new_trash.transform.parent = transform;
-            new_trash.transform.rotation = Random.rotation;
+            //new_trash.transform.rotation = Random.rotation;
         }
     }
 
