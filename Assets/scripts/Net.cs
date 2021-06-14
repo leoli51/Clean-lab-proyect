@@ -168,6 +168,7 @@ public class Net : MonoBehaviour
         lineRenderer.enabled = true;
         repairText.SetActive(false);
         lineRenderer.widthMultiplier = initialWidthFactor;
+        vertexPosition = red_boat.position + ((blue_boat.position - red_boat.position) / 2);
     }
 
 }

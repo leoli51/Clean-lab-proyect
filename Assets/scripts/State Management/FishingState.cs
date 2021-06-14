@@ -20,7 +20,7 @@ public class FishingState : State
     public override void AfterActivate()
     {
         net.Restore();
-        harbor.OnBoatsInHarbor.AddListener(EndLevel);
+        StartCoroutine(SetHarborListenerAfterSeconds(5f));
 
         // activate boat movement
         redBoat.GetComponent<FollowPointer>().enabled = true;
@@ -54,6 +54,12 @@ public class FishingState : State
         audioManager.Stop(AudioManager.SoundName.MainMusic);
         audioManager.Stop(AudioManager.SoundName.FishingAmbient);
 
+    }
+
+    public IEnumerator SetHarborListenerAfterSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        harbor.OnBoatsInHarbor.AddListener(EndLevel);
     }
 
     public void EndLevel()
