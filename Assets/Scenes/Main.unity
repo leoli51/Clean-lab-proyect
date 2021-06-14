@@ -2731,7 +2731,7 @@ MonoBehaviour:
   start_fishes: 12
   start_trash: 5
   water_plane: {fileID: 170506691}
-  polluted_water: {r: 0.2856065, g: 0.3018868, b: 0.08373086, a: 1}
+  polluted_water: {r: 0.2856065, g: 0.3018868, b: 0.08373086, a: 0.39215687}
 --- !u!114 &1294626435 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4875382989594252658, guid: ce1dfa2c293906d4fb7402b2e13b09a3,
@@ -4569,13 +4569,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466051997}
     m_Modifications:
+    - target: {fileID: 236278056837856, guid: c07b64663d2ecca45b131ed27ecccf8b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 236278770436994, guid: c07b64663d2ecca45b131ed27ecccf8b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18
+      objectReference: {fileID: 0}
     - target: {fileID: 236278807888062, guid: c07b64663d2ecca45b131ed27ecccf8b, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 236278807888062, guid: c07b64663d2ecca45b131ed27ecccf8b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50
+      value: 52.7
       objectReference: {fileID: 0}
     - target: {fileID: 236278807888062, guid: c07b64663d2ecca45b131ed27ecccf8b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4620,6 +4628,21 @@ PrefabInstance:
     - target: {fileID: 236278807888063, guid: c07b64663d2ecca45b131ed27ecccf8b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4319265452671964215, guid: c07b64663d2ecca45b131ed27ecccf8b,
+        type: 3}
+      propertyPath: m_text
+      value: "Choose your gift!\n\u2190  stand both on one  \u2192"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4319265452671964215, guid: c07b64663d2ecca45b131ed27ecccf8b,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 17.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4319265452671964215, guid: c07b64663d2ecca45b131ed27ecccf8b,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07b64663d2ecca45b131ed27ecccf8b, type: 3}

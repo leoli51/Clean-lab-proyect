@@ -34,6 +34,7 @@ public class HarborState : State
     {
         captain.SetActive(true);
         counter.SetActive(true);
+        net.repairText.SetActive(false);
 
         // show fish + trash count
         fishCountText.text = net.fishCount.ToString("F0");
@@ -44,7 +45,7 @@ public class HarborState : State
         {
             powerUpManager.Show();
 
-            if (net.fishCount > neededFishCount+6)
+            if (net.fishCount > neededFishCount+4)
             {
                 captainText.text = "You caught way too much fish. Try to keep the ecosystem in balance!";
             }
@@ -52,11 +53,11 @@ public class HarborState : State
             {
                 captainText.text = "The sea got cleaner. Thanks for taking care of that trash!";
             }
-            else if (seaManager.GetTrashPopulation() > 8)
+            else if (seaManager.GetTrashPopulation() > 7)
             {
                 captainText.text = "The sea is very poluted. We should do something to change this.";
             }
-            else if (net.fishCount <= neededFishCount+3)
+            else if (net.fishCount < neededFishCount+3)
             {
                 captainText.text = "Perfect catch! Choose your gift.";
             }
@@ -75,7 +76,7 @@ public class HarborState : State
             {
                 captainText.text = "The sea got cleaner. Thanks for taking care of that trash!";
             }
-            else if (seaManager.GetTrashPopulation() > 8)
+            else if (seaManager.GetTrashPopulation() > 7)
             {
                 captainText.text = "The sea is very poluted. We should do something to change this.";
             }

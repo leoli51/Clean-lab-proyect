@@ -16,9 +16,8 @@ public class Net : MonoBehaviour
 
     private Vector3 vertexPosition;
     public bool ripped = false;
-    
-    // changed to float to work with power up script ... hope there is not something like strength == 0 in the code....
-    public float strength = 10;
+      
+    public float strength = 10f;
     public int damage = 0;
 
     public int fishCount;
@@ -132,7 +131,6 @@ public class Net : MonoBehaviour
         Destroy(fish);
         fishCount++;
         audioManager.Play(AudioManager.SoundName.CollectFish);
-        // NTH increase "weight" of the net (by making the line thicker in the middle and speed slower
     }
 
     void CollectTrash(GameObject trash)
@@ -142,7 +140,6 @@ public class Net : MonoBehaviour
         trashCount++;
         damage++;
         audioManager.Play(AudioManager.SoundName.CollectTrash);
-        // NTH increase "weight" of the net (by making the line thicker in the middle and speed slower
     }
 
     public void Rip()
