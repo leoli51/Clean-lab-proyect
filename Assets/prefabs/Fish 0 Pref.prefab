@@ -54,6 +54,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -111,8 +112,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19755745, y: 0.37129468, z: 0.52469563}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.19755745, y: 14.032583, z: 0.52469563}
+  m_Center: {x: 0, y: 1.3491542, z: 0}
 --- !u!54 &4897122045395035870
 Rigidbody:
   m_ObjectHideFlags: 0

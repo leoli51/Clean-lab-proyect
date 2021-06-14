@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8812815211978627660}
   - component: {fileID: 1626203678668455105}
   m_Layer: 0
-  m_Name: Box_1
+  m_Name: Box_1_rot2
   m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181574321910500}
-  m_LocalRotation: {x: 0.14224426, y: 0.5648625, z: -0.09960049, w: 0.8067074}
+  m_LocalRotation: {x: 0.4405114, y: 0.3811203, z: 0.38112026, w: 0.7179445}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 4281924870882456}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20, y: 70, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 70, z: 70}
 --- !u!54 &8812815211978627660
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -61,8 +61,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 4.377268, z: 1.2680608}
-  m_Center: {x: 0.00000003810349, y: -1.6813116, z: 0.10828584}
+  m_Size: {x: 3.6678867, y: 0.6706972, z: 1.268061}
+  m_Center: {x: -1.3339437, y: 0.17197461, z: 0.108285725}
 --- !u!1 &1954823949151432
 GameObject:
   m_ObjectHideFlags: 0
